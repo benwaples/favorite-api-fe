@@ -6,7 +6,8 @@ import {
   Switch,
 } from 'react-router-dom';
 import AuthPage from './Auth/AuthPage.js'
-// import Header from './Header.js'
+import Header from './Header.js'
+import TodaysPic from './pocd/TodaysPic.js'
 
 export default class App extends Component {
 
@@ -41,13 +42,20 @@ export default class App extends Component {
     return (
       <div className="stayCalm">
       <Router>
-        {/* <Header /> */}
+        <Header />
           <Switch>
               <Route 
                   path="/" 
                   exact
                   render={(routerProps) => <AuthPage 
                     auth={this.handleAuth}
+                    {...routerProps} />} 
+              />
+              <Route 
+                  path="/TodaysPic" 
+                  exact
+                  render={(routerProps) => <TodaysPic 
+                    checkState={this.checkState}
                     {...routerProps} />} 
               />
           </Switch>

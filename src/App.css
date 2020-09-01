@@ -1,10 +1,37 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+
+body {
+  --color1: #FFFFFFff;
+  --color2: #A82513ff;
+  --color3: #000000ff;
+  --color4: #7A91C0ff;
+  --color5: #0D3C8Fff;
+
+  font-family: 'Inconsolata', monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+  background-color: var(--color4)
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 350px;
+  margin-right: 50px
+}
+
+.logo {
+  width: 150px;
+  margin: 0 0 0 50px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,20 +40,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {

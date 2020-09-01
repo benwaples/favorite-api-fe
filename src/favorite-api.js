@@ -19,3 +19,15 @@ export function signIn(userData) {
     throw { error: e.message }
   }
 }
+
+export function getPic() {
+  const token = localStorage.get('TOKEN')
+
+  try {
+    return request
+              .get(`${URL}/auth/signin`)
+              .set('Authorization', token)
+  } catch(e) {
+    throw { error: e.message }
+  }
+}
