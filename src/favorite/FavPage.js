@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import { fetchFavorites } from '../favorite-api.js'
 import FavCard from './FavCard.js'
+import FavDets from './FavDets.js'
 
 export default class FavPage extends Component {
 
   state = {
     favorites: [],
-    isLoading: false
+    isLoading: false,
+    dets: {},
+    isDetails: false
   }
 
   componentDidMount = async () => {
@@ -22,20 +25,36 @@ export default class FavPage extends Component {
     } catch (e) {
         console.log(e.message)
       }
-    }
+  }
+
+  handleDetails = (fav) => {
+    this.setState({ isDetails: true, dets: fav})
+  }
+  
   render() {
     return (
-      <div className="favpage">
-        <ul>
-          {
-            !this.state.isLoading ?
-            this.state.favorites.map(favorite => {
-              return <FavCard data={favorite} key={favorite.id}/>
-            })
-            :
-            'loading'
-          }
-        </ul>
+      <div className="largeFav">
+        {
+          this.state.isDetails && 
+          <section>
+            <FavDets dets={this.state.dets}/>
+          </section>
+        }
+        <div className="favpage">
+          <ul>
+            {
+              !this.state.isLoading ?
+              this.state.favorites.map(favorite => {
+                return <FavCard 
+                data={favorite}
+                handleDetails={this.handleDetails} 
+                key={favorite.id}/>
+              })
+              :
+              'loading'
+            }
+          </ul>
+        </div>
       </div>
     )
   }

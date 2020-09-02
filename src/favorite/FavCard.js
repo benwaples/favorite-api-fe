@@ -3,7 +3,8 @@ import React, { Component } from 'react'
 export default class FavCard extends Component {
   render() {
     const {
-      data
+      data,
+      handleDetails
     } = this.props
     return (
       <li>
@@ -16,6 +17,8 @@ export default class FavCard extends Component {
           :
           <img className="cardMedia" src={data.url} alt={data.title} />
         }
+        <button onClick={() => (handleDetails(data))} className="details">See Details</button>
+        <button className="delete">Delete Favorite</button>
       </li>
     )
   }

@@ -93,3 +93,30 @@ nav {
 .todayPic h6 {
   margin-top: 0;
 }
+
+.favpage ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.favpage li {
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid var(--color2);
+  background-color: var(--color4);
+  padding: 10px;
+  margin: 10px;
+}
+
+.favpage img {
+  width: 200px;
+  border: 1px solid var(--color2)
+}
