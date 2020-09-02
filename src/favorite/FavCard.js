@@ -1,6 +1,19 @@
 import React, { Component } from 'react'
+import { deleteFavorite, fetchFavorites } from '../favorite-api.js'
 
 export default class FavCard extends Component {
+
+  handleDelete = async () => {
+    const favoriteId = this.props.data.id
+    try {
+    await deleteFavorite({id: favoriteId});
+    await this.props.refresh()
+    
+    } catch(e) {
+      console.log(e)
+    }
+
+  }
   render() {
     const {
       data,
@@ -18,7 +31,7 @@ export default class FavCard extends Component {
           <img className="cardMedia" src={data.url} alt={data.title} />
         }
         <button onClick={() => (handleDetails(data))} className="details">See Details</button>
-        <button className="delete">Delete Favorite</button>
+        <button onClick={() => this.handleDelete()} className="delete">Delete Favorite</button>
       </li>
     )
   }

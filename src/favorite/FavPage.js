@@ -27,6 +27,19 @@ export default class FavPage extends Component {
       }
   }
 
+  handleRefresh = async () => {
+    try {
+      this.setState({ isLoading: true})
+      const data = await fetchFavorites();
+
+      this.setState({ favorites: data.body, isLoading: false})
+
+      console.log(data.body)
+    } catch (e) {
+        console.log(e.message)
+      }
+  }
+
   handleDetails = (fav) => {
     this.setState({ isDetails: true, dets: fav})
   }
@@ -47,6 +60,7 @@ export default class FavPage extends Component {
               this.state.favorites.map(favorite => {
                 return <FavCard 
                 data={favorite}
+                refresh={this.handleRefresh}
                 handleDetails={this.handleDetails} 
                 key={favorite.id}/>
               })

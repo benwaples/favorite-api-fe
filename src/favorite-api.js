@@ -55,4 +55,16 @@ export function fetchFavorites() {
     throw { error: e.message }
   }
 }
+
+export function deleteFavorite(id) {
+  const token = localStorage.getItem('TOKEN')
+
+  try {
+    return request
+              .delete(`${URL}/api/deleteFavorite`, id)
+              .set('Authorization', token)
+  } catch(e) {
+    throw { error: e.message }
+  }
+}
  
