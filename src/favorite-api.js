@@ -43,4 +43,16 @@ export function addPic(pic) {
     throw { error: e.message }
   }
 }
+
+export function fetchFavorites() {
+  const token = localStorage.getItem('TOKEN')
+
+  try {
+    return request
+              .get(`${URL}/api/favorites`)
+              .set('Authorization', token)
+  } catch(e) {
+    throw { error: e.message }
+  }
+}
  

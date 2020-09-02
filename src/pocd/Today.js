@@ -14,7 +14,7 @@ export default class Today extends Component {
       picDets
     } = this.props
     return (
-      <div>
+      <>
         <h3>{picDets.title}</h3>
         <h6>{picDets.date}</h6>
         {
@@ -25,10 +25,10 @@ export default class Today extends Component {
           :
           <img  src={picDets.url} alt={picDets.title} />
         }
-        <p>{picDets.description}</p>
-        <p>Copyright: {picDets.copyright}</p>
+        <p className="cr">Copyright: {picDets.copyright}</p>
+        <p className="descrip" >{picDets.description}</p>
         <button onClick={this.handleAdd} className="add">Add to Favorites</button>
-      </div>
+      </>
     )
   }
 }
