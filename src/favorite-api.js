@@ -31,4 +31,16 @@ export function getPic() {
     throw { error: e.message }
   }
 }
+
+export function addPic(pic) {
+  const token = localStorage.getItem('TOKEN')
+
+  try {
+    return request
+              .post(`${URL}/api/getPic`, pic)
+              .set('Authorization', token)
+  } catch(e) {
+    throw { error: e.message }
+  }
+}
  
