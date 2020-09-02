@@ -21,13 +21,14 @@ export function signIn(userData) {
 }
 
 export function getPic() {
-  const token = localStorage.get('TOKEN')
+  const token = localStorage.getItem('TOKEN')
 
   try {
     return request
-              .get(`${URL}/auth/signin`)
+              .get(`${URL}/api/getPic`)
               .set('Authorization', token)
   } catch(e) {
     throw { error: e.message }
   }
 }
+ 

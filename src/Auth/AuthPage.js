@@ -6,15 +6,6 @@ import {
 import DisplaySignIn from './DisplaySignIn.js'
 import DisplaySignUp from './DisplaySignUp.js'
 
-const notification = {    
-  title: "Error!",    
-  message: "Configurable",    
-  type: "success",    
-  insert: "top",    
-  container: "top-right",    
-  animationIn: ["animated", "fadeIn"],    
-  animationOut: ["animated", "fadeOut"]
-};
 
 export default class AuthPage extends Component {
 
@@ -38,7 +29,7 @@ export default class AuthPage extends Component {
 
 
     this.props.auth(userData.body.token)
-    this.props.history.push('/coffeeList')
+    this.props.history.push('/TodaysPic')
     } catch(e) {
     }
   }
@@ -53,7 +44,7 @@ export default class AuthPage extends Component {
     })
 
     this.props.auth(userData.body.token)
-    this.props.history.push('/coffeeList')
+    this.props.history.push('/TodaysPic')
     } catch(e) {
   }
   } 
