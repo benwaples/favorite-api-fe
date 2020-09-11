@@ -9,6 +9,7 @@ import AuthPage from './Auth/AuthPage.js'
 import Header from './Header.js'
 import TodaysPic from './pocd/TodaysPic.js'
 import FavPage from './favorite/FavPage.js'
+import Calendar from './Calendar/Calendar.js'
 
 export default class App extends Component {
 
@@ -63,6 +64,13 @@ export default class App extends Component {
                   path="/FavPage" 
                   exact
                   render={(routerProps) => <FavPage 
+                    checkState={this.checkState}
+                    {...routerProps} />} 
+              />
+              <Route 
+                  path="/Calendar" 
+                  exact
+                  render={(routerProps) => <Calendar 
                     checkState={this.checkState}
                     {...routerProps} />} 
               />

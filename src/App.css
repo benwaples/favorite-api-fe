@@ -12,12 +12,15 @@ body {
 }
 
 nav {
-  background-color: var(--opacWhiteBg)
+  background-color: var(--opacWhiteBg);
+  padding: 8px;
 }
 
-nav p {
+nav a {
   cursor: pointer;
   font-weight: bold;
+  text-decoration: none;
+  color: black;
 }
 
 button {
