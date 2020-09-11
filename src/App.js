@@ -9,7 +9,7 @@ import AuthPage from './Auth/AuthPage.js'
 import Header from './Header.js'
 import TodaysPic from './pocd/TodaysPic.js'
 import FavPage from './favorite/FavPage.js'
-import Calendar from './Calendar/Calendar.js'
+import ChooseDay from './Calendar/Calendar.js'
 
 export default class App extends Component {
 
@@ -70,7 +70,7 @@ export default class App extends Component {
               <Route 
                   path="/Calendar" 
                   exact
-                  render={(routerProps) => <Calendar 
+                  render={(routerProps) => <ChooseDay 
                     checkState={this.checkState}
                     {...routerProps} />} 
               />
