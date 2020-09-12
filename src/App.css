@@ -124,7 +124,6 @@ nav {
 
 .favpage img {
   width: 200px;
-  border: 1px solid var(--color2)
 }
 
 .favpage .loading {
@@ -181,3 +180,9 @@ nav {
 .detailsCard img {
   width: 95%;
 }
+
+td {
+  cursor: pointer;
+}
+
+
