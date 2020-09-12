@@ -78,11 +78,13 @@ nav {
 
 .todayPic img, .todayPic video {
   border-radius: 20px;
-  width: 
+  width: 80%;
+  max-width: 800px;
 }
 
 .descrip {
-  width: 800px;
+  width: 80%;
+  max-width: 800px;
 }
 
 .todayPic button {
