@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { deleteFavorite, fetchFavorites } from '../favorite-api.js'
+import { deleteFavorite } from '../favorite-api.js'
 
 
 export default class FavCard extends Component {
