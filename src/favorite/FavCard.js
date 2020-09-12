@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { deleteFavorite, fetchFavorites } from '../favorite-api.js'
 
+
 export default class FavCard extends Component {
 
   handleDelete = async () => {
@@ -14,19 +15,20 @@ export default class FavCard extends Component {
     }
 
   }
+
   render() {
     const {
       data,
       handleDetails
     } = this.props
+    
     return (
       <li>
         <h3>{data.title}</h3>
         {
-          data.media === 'video' ?
-          <video className="cardMedia" controls>
-            <source src={data.url} type="video/mp4" />
-          </video> 
+          data.url.includes('youtube') ?
+          <iframe src={data.url} title={data.title} className="videoCard" allowFullScreen>
+          </iframe> 
           :
           <img className="cardMedia" src={data.url} alt={data.title} />
         }

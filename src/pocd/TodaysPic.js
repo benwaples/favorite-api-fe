@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getPic } from '../favorite-api.js'
+import { getPicByDate } from '../favorite-api.js'
 import Today from './Today.js'
 export default class TodaysPic extends Component {
 
@@ -10,10 +10,13 @@ export default class TodaysPic extends Component {
 
   componentDidMount = async () => {
     !this.props.checkState() && this.props.history.push('/')
+    
+    const now = new Date()
+    const dateString = `${now.getFullYear()}-${(now.getMonth() + 1)}-${now.getDate()}`;
 
     try {
       this.setState({isLoading: true})
-      const data = await getPic();
+      const data = await getPicByDate(dateString);
 
       console.log(data.body)
       data === 'Not Found' ?
@@ -27,6 +30,7 @@ export default class TodaysPic extends Component {
     }
 
   }
+
   render() {
     const {
       pic
@@ -37,7 +41,7 @@ export default class TodaysPic extends Component {
           !this.state.isLoading ?
           <Today picDets={pic}/>
           :
-          <p>loading</p>
+          <img className="loading" src="https://media.giphy.com/media/U1xhSePCu5pLff8NBy/giphy.gif" alt="loading" />
         }
       </div>
     )

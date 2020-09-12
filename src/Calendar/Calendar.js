@@ -14,6 +14,9 @@ const notification = {
   type: "success",
   insert: "top",
   container: "top-right",
+  dismiss: {
+    duration: 4000
+  },
   animationIn: ["animated", "fadeIn"],
   animationOut: ["animated", "fadeOut"]
 };
@@ -28,13 +31,13 @@ export default class ChooseDay extends Component {
 
   handleDateClick = async(arg) => { 
     try {
-    this.setState({ isLoading: true })
+    this.setState({ isLoading: true, displayPOTD: true })
 
     console.log(arg.dateStr)
 
     const data = await getPicByDate(arg.dateStr)
     console.log(data.body)
-    this.setState({ isLoading: false, thisDaysPOTD: data.body, displayPOTD: true })
+    this.setState({ isLoading: false, thisDaysPOTD: data.body })
     } catch(error){
       store.addNotification({
         ...notification,
@@ -42,23 +45,30 @@ export default class ChooseDay extends Component {
         message: "Pick a day before today",
         type: "info",
       })
+      
+      this.setState({ isLoading: false, displayPOTD: false})
     }
 
   }
   render() {
     return (
-      <div>
+      <div className="calenderPage">
         <ReactNotification />
-        {
-          this.state.displayPOTD 
-          ?
         <div className="showData">
+        {
+          !this.state.displayPOTD 
+          ? <p>Pick a date and see the Nasa picture of that day</p>
+          :
+          (!this.state.isLoading 
+          ?
+        
           <Today
           picDets={this.state.thisDaysPOTD} />
-        </div>
+        
           :
-          <p>Pick a date to see the photo of that day</p>
+          <img className="loading" src="https://media.giphy.com/media/U1xhSePCu5pLff8NBy/giphy.gif" alt="loading" />)
         }
+        </div>
         <div className="chooseDay">
           <FullCalendar
           plugins={[ dayGridPlugin, interactionPlugin]}

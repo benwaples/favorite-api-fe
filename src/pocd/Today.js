@@ -4,7 +4,11 @@ import { addPic } from '../favorite-api.js'
 export default class Today extends Component {
   
   handleAdd = async () => {
-    await addPic(this.props.picDets)
+    try {
+      await addPic(this.props.picDets)
+    } catch(error) {
+      console.log(error)
+    }
   }
 
   render() {
@@ -18,7 +22,7 @@ export default class Today extends Component {
         <h3>{picDets.title}</h3>
         <h6>{picDets.date}</h6>
         {
-          picDets.media === 'video' ?
+          picDets.media_type === 'video' ?
           <video controls>
             <source src={picDets.url} type="video/mp4" />
           </video> 

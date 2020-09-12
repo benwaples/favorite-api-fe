@@ -7,12 +7,12 @@ export default class FavDets extends Component {
     } = this.props
     return (
       <div className="detailsCard">
-        <h2>{dets.title}</h2>
+        <h1>More Details on:</h1>
+        <h3>{dets.title}</h3>
         {
-          dets.media === 'video' ?
-          <video controls>
-            <source src={dets.url} type="video/mp4" />
-          </video> 
+          dets.url.includes('youtube') ?
+          <iframe src={dets.url} title={dets.title} className="videoCard" allowFullScreen>
+          </iframe> 
           :
           <img src={dets.url} alt={dets.title} />
         }

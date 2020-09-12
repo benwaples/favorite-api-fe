@@ -34,7 +34,7 @@ export default class FavPage extends Component {
 
       this.setState({ favorites: data.body, isLoading: false})
 
-      console.log(data.body)
+      console.log(data.body, 'favorite objects')
     } catch (e) {
         console.log(e.message)
       }
@@ -65,7 +65,7 @@ export default class FavPage extends Component {
                 key={favorite.id}/>
               })
               :
-              'loading'
+              <img className="loading" src="https://media.giphy.com/media/U1xhSePCu5pLff8NBy/giphy.gif" alt="loading" />
             }
           </ul>
         </div>
