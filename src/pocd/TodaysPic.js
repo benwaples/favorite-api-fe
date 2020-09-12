@@ -18,12 +18,11 @@ export default class TodaysPic extends Component {
       this.setState({isLoading: true})
       const data = await getPicByDate(dateString);
 
-      console.log(data.body)
       data === 'Not Found' ?
       this.setState({ pic: {title: 'this day isnt available yet'} })
       :
       this.setState({ pic: data.body, isLoading: false})
-
+      console.log(this.state.pic)
       
     } catch (e) {
       console.log(e.message)

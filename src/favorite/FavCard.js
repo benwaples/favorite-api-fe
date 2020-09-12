@@ -26,7 +26,7 @@ export default class FavCard extends Component {
       <li>
         <h3>{data.title}</h3>
         {
-          data.url.includes('youtube') ?
+          (data.url.includes('youtube') || data.url.includes('video')) ?
           <iframe src={data.url} title={data.title} className="videoCard" allowFullScreen>
           </iframe> 
           :

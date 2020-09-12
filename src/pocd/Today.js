@@ -13,21 +13,20 @@ export default class Today extends Component {
 
   render() {
 
-
     const {
       picDets
     } = this.props
+    
     return (
       <>
         <h3>{picDets.title}</h3>
         <h6>{picDets.date}</h6>
         {
           picDets.media_type === 'video' ?
-          <video controls>
-            <source src={picDets.url} type="video/mp4" />
-          </video> 
+          <iframe src={picDets.src} className="videoCard" title={picDets.title} allowFullScreen>
+          </iframe> 
           :
-          <img  src={picDets.url} alt={picDets.title} />
+          <img src={picDets.url} alt={picDets.title} />
         }
         <p className="cr">Copyright: {picDets.copyright}</p>
         <p className="descrip" >{picDets.description}</p>

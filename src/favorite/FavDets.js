@@ -10,7 +10,7 @@ export default class FavDets extends Component {
         <h1>More Details on:</h1>
         <h3>{dets.title}</h3>
         {
-          dets.url.includes('youtube') ?
+          (dets.url.includes('youtube') || dets.url.includes('vimeo'))  ?
           <iframe src={dets.url} title={dets.title} className="videoCard" allowFullScreen>
           </iframe> 
           :
