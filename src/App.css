@@ -126,6 +126,10 @@ nav {
   width: 200px;
 }
 
+.todayPic .loading {
+  width: 200px
+}
+
 .favpage .loading {
   border: none;
 }
