@@ -32,6 +32,18 @@ export function getPic() {
   }
 }
 
+export function getPicByDate(date) {
+  const token = localStorage.getItem('TOKEN')
+
+  try {
+    return request
+              .get(`${URL}/api/getPic/showMe?date=${date}`)
+              .set('Authorization', token)
+  } catch(e) {
+    throw { error: e.message }
+  }
+}
+
 export function addPic(pic) {
   const token = localStorage.getItem('TOKEN')
 
