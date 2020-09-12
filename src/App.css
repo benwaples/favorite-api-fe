@@ -1,10 +1,55 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+
+body {
+  --color1: #FFFFFF;
+  --color2: #A82513;
+  --color3: #000000;
+  --color4: #7A91C0;
+  --color5: #0D3C8F;
+  --opacWhiteBg: rgba(255,255,255, .3);
+  --opacRedBg: rgba(168, 37, 19, 0.3);
+
+  font-family: 'Inconsolata', monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav {
+  background-color: var(--opacWhiteBg);
+  padding: 8px;
+}
+
+nav a {
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+  background-color: var(--color4)
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 350px;
+  margin-right: 50px
+}
+
+.logo {
+  width: 150px;
+  margin: 0 0 0 50px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,20 +58,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {
@@ -36,3 +67,122 @@
     transform: rotate(360deg);
   }
 }
+
+.todayPic {
+  background-color: var(--color1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.todayPic img, .todayPic video {
+  border-radius: 20px;
+  width: 80%;
+  max-width: 800px;
+}
+
+.descrip {
+  width: 80%;
+  max-width: 800px;
+}
+
+.todayPic button {
+  border: 1px solid var(--color5);
+  width: 80px;
+  height: 60px;
+  background-color: var(--color2);
+  border-radius: 15px;
+  margin-bottom: 40px;
+}
+
+.todayPic h6 {
+  margin-top: 0;
+}
+
+.favpage ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.favpage li {
+  width: auto;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid var(--color2);
+  background-color: var(--color4);
+  padding: 10px;
+  margin: 10px;
+}
+
+.favpage img {
+  width: 200px;
+}
+
+.favpage .loading {
+  border: none;
+}
+
+.chooseDay {
+  width: 75%;
+  height: 75%;
+  margin: auto;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.showData {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.showData img {
+  width: 75%;
+}
+.loading {
+  margin: auto;
+}
+
+.showData .loading {
+  width: 200px;
+}
+
+.videoCard {
+  width: 275px;
+  border: none;
+}
+
+.detailsCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--opacRedBg);
+  padding: 20px;
+  width: 50%;
+  margin: 20px auto 20px auto;
+  border-radius: 40px;
+}
+
+.detailCard iframe {
+  width: 95%;
+}
+
+.detailsCard img {
+  width: 95%;
+}
+
+td {
+  cursor: pointer;
+}
+
+

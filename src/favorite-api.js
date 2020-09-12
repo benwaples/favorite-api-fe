@@ -19,3 +19,64 @@ export function signIn(userData) {
     throw { error: e.message }
   }
 }
+
+export function getPic() {
+  const token = localStorage.getItem('TOKEN')
+
+  try {
+    return request
+              .get(`${URL}/api/getPic`)
+              .set('Authorization', token)
+  } catch(e) {
+    throw { error: e.message }
+  }
+}
+
+export function getPicByDate(date) {
+  const token = localStorage.getItem('TOKEN')
+
+  try {
+    return request
+              .get(`${URL}/api/getPic/showMe?date=${date}`)
+              .set('Authorization', token)
+  } catch(e) {
+    throw { error: e.message }
+  }
+}
+
+export function addPic(pic) {
+  const token = localStorage.getItem('TOKEN')
+
+  try {
+    return request
+              .post(`${URL}/api/getPic`, pic)
+              .set('Authorization', token)
+  } catch(e) {
+    throw { error: e.message }
+  }
+}
+
+export function fetchFavorites() {
+  const token = localStorage.getItem('TOKEN')
+
+  try {
+    return request
+              .get(`${URL}/api/favorites`)
+              .set('Authorization', token)
+  } catch(e) {
+    throw { error: e.message }
+  }
+}
+
+export function deleteFavorite(id) {
+  const token = localStorage.getItem('TOKEN')
+
+  try {
+    return request
+              .delete(`${URL}/api/deleteFavorite`, id)
+              .set('Authorization', token)
+  } catch(e) {
+    throw { error: e.message }
+  }
+}
+ 
