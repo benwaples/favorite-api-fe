@@ -1,27 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
 
 body {
-  --color1: #FFFFFF;
+  /* --color1: #FFFFFF;
   --color2: #A82513;
   --color3: #000000;
   --color4: #7A91C0;
-  --color5: #0D3C8F;
-  --opacWhiteBg: rgba(255,255,255, .3);
-  --opacRedBg: rgba(168, 37, 19, 0.3);
+  --color5: #0D3C8F; */
+  /* --opacWhiteBg: rgba(255,255,255, .3);
+  --opacRedBg: rgba(168, 37, 19, 0.3); */
+
+  --color1: hsla(24, 95%, 59%, 1);
+  --color2: hsla(59, 100%, 73%, 1);
+  --color3: hsla(49, 100%, 75%, 1);
+  --color4: hsla(191, 46%, 41%, 1);
+  --color5: hsla(279, 52%, 13%, 1);
+
+  box-sizing: border-box;
 
   font-family: 'Inconsolata', monospace;
 }
 
-nav {
-  background-color: var(--opacWhiteBg);
-  padding: 8px;
-}
 
 nav a {
   cursor: pointer;
   font-weight: bold;
   text-decoration: none;
   color: black;
+  
 }
 
 button {
@@ -35,7 +40,7 @@ header {
   flex-wrap: wrap;
   width: 100%;
   margin: 0;
-  background-color: lightblue
+  background-color: var(--color4);;
 }
 
 
@@ -50,17 +55,23 @@ header {
 
 
 nav {
+  background-color: var(--opacWhiteBg);
+  padding: 8px;
+  border: solid 1px var(--color5);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
   width: 350px;
-  margin-right: 50px
+  margin-right: 50px;
 }
 
 @media only screen and (max-width: 970px) {
   nav {
     margin-right: 0;
+    margin-bottom: 10px;
+    position: sticky;
+    top: 20px;
   }
 }
 
