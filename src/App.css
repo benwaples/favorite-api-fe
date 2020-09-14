@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
 
 body {
-  /* --color1: #FFFFFF;
+  --color1: #FFFFFF;
   --color2: #A82513;
   --color3: #000000;
   --color4: #7A91C0;
-  --color5: #0D3C8F; */
-  /* --opacWhiteBg: rgba(255,255,255, .3);
-  --opacRedBg: rgba(168, 37, 19, 0.3); */
+  --color5: #0D3C8F;
+  --opacWhiteBg: rgba(255,255,255, .7);
+  --opacRedBg: hsla(24, 95%, 59%, .7);
 
   --color1: hsla(24, 95%, 59%, 1);
   --color2: hsla(59, 100%, 73%, 1);
@@ -26,7 +26,7 @@ nav a {
   font-weight: bold;
   text-decoration: none;
   color: black;
-  
+  margin: 3px;
 }
 
 button {
@@ -35,7 +35,7 @@ button {
 
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
@@ -55,6 +55,19 @@ header {
 
 
 nav {
+  padding: 8px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  width: auto;
+  margin: auto;
+  position: fixed;
+  top: 30px;
+  right: 20px;
+}
+
+.stretch {
   background-color: var(--opacWhiteBg);
   padding: 8px;
   border: solid 1px var(--color5);
@@ -63,16 +76,19 @@ nav {
   align-items: center;
   flex-wrap: wrap;
   width: 350px;
-  margin-right: 50px;
+  margin: auto;
+  position: fixed;
+  top: 30px;
+  right: 10px;
 }
 
-@media only screen and (max-width: 970px) {
-  nav {
-    margin-right: 0;
-    margin-bottom: 10px;
-    position: sticky;
-    top: 20px;
-  }
+.navIcon {
+  width: 30px
+}
+
+nav p {
+  cursor: pointer;
+  margin: 5px 0 0 0;
 }
 
 .auth {
@@ -93,30 +109,8 @@ nav {
   margin: 0 0 0 50px;
 }
 
-@media only screen and (max-width: 970px) {
-  .logo{
-    margin: 0 0 0 0;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .todayPic {
-  background-color: var(--color1);
+  /* background-color: var(--color1); */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -134,13 +128,19 @@ nav {
   max-width: 800px;
 }
 
-.todayPic button {
+.add {
   border: 1px solid var(--color5);
-  width: 80px;
+  width: auto;
   height: 60px;
-  background-color: var(--color2);
+  background-color: var(--opacRedBg);
   border-radius: 15px;
   margin-bottom: 40px;
+  border: none;
+}
+
+.add:hover {
+  border: solid 1px black;
+  background-color: var(--color1);
 }
 
 .todayPic h6 {
@@ -236,4 +236,36 @@ td {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 970px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    margin-right: 0;
+    margin-bottom: 10px;
+    position: fixed;
+    top: 50px;
+    right: 30px;
+    width: 40px;
+  }
+ 
+  .stretch {
+    background-color: var(--opacWhiteBg);
+    padding: 8px;
+    border: solid 1px var(--color5);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: auto;
+    margin: auto;
+    position: fixed;
+    top: 30px;
+    right: 10px;
+  }
 
+  .logo{
+    margin: 0 0 0 0;
+  }
+}
