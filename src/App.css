@@ -248,7 +248,12 @@ td {
   }
 
   header h1 {
+    position: relative;
     margin-top: 40px
+  }
+
+  .logo {
+    align-self: center;
   }
 
   nav {

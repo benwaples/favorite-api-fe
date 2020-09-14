@@ -24,14 +24,12 @@ export default class extends Component {
     this.setState({ displayNav: false })
   }
 
-  
-
   render() {
     return (
       <>
         <header>
           <img className="logo" src="newlogo.png" alt="pocd logo"/>
-          <h1>Ben's NASA app</h1>
+          <h1>My Favorite NASA photos</h1>
         </header>
         
         <nav>
@@ -41,7 +39,7 @@ export default class extends Component {
           <>
             <Link onClick={this.handleNav} to="/TodaysPic">Today</Link>
             <Link onClick={this.handleNav} to="/Calendar">Calendar</Link>
-            <Link onClick={this.handleNav} to="/FavPage">Your Favorites</Link>
+            <Link onClick={this.handleNav} to="/FavPage">My Favorites</Link>
             <Link onClick={this.handleNav} to="/">Logout</Link>
             <p onClick={this.handleNav}>Minimize</p>
             </>
