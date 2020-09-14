@@ -35,7 +35,8 @@ button {
 
 header {
   display: flex;
-  justify-content: start;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
@@ -43,14 +44,13 @@ header {
   background-color: var(--color4);;
 }
 
+header h1 {
+  position: absolute;
+}
+
 
 @media only screen and (max-width: 970px) {
-  header {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
+  
 }
 
 
@@ -107,6 +107,7 @@ nav p {
 .logo {
   width: 150px;
   margin: 0 0 0 50px;
+  align-self: flex-start;
 }
 
 .todayPic {
@@ -237,6 +238,13 @@ td {
 }
 
 @media only screen and (max-width: 970px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   nav {
     display: flex;
     flex-direction: column;

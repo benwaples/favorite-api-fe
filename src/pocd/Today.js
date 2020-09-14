@@ -28,7 +28,7 @@ export default class Today extends Component {
           :
           <img src={picDets.url} alt={picDets.title} />
         }
-        <p className="cr">Copyright: {picDets.copyright}</p>
+        <p className="cr">Description:</p>
         <p className="descrip" >{picDets.description}</p>
         <button onClick={this.handleAdd} className="add">Add to Favorites</button>
       </>
