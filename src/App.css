@@ -41,11 +41,12 @@ header {
   flex-wrap: wrap;
   width: 100%;
   margin: 0;
-  background-color: var(--color4);;
+  background-color: white;
 }
 
 header h1 {
   position: absolute;
+  margin-top: 30px;
 }
 
 
@@ -63,7 +64,7 @@ nav {
   width: auto;
   margin: auto;
   position: fixed;
-  top: 30px;
+  top: 35px;
   right: 20px;
 }
 
@@ -245,6 +246,10 @@ td {
     align-items: center;
   }
 
+  header h1 {
+    margin-top: 40px
+  }
+
   nav {
     display: flex;
     flex-direction: column;
@@ -253,7 +258,7 @@ td {
     margin-right: 0;
     margin-bottom: 10px;
     position: fixed;
-    top: 50px;
+    top: 35px;
     right: 30px;
     width: 40px;
   }

@@ -21,6 +21,10 @@ export default class extends Component {
     
   }
 
+  handleReset = () => {
+    this.setState({ displayNav: false })
+  }
+
   
 
   render() {
@@ -36,10 +40,10 @@ export default class extends Component {
           this.state.displayNav 
           ?
           <>
-            <Link to="/TodaysPic">Today</Link>
-            <Link to="/Calendar">Calendar</Link>
-            <Link to="/FavPage">Your Favorites</Link>
-            <Link to="/">Logout</Link>
+            <Link onClick={this.handleNav} to="/TodaysPic">Today</Link>
+            <Link onClick={this.handleNav} to="/Calendar">Calendar</Link>
+            <Link onClick={this.handleNav} to="/FavPage">Your Favorites</Link>
+            <Link onClick={this.handleNav} to="/">Logout</Link>
             <p onClick={this.handleNav}>Minimize</p>
             </>
           :
