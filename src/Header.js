@@ -29,7 +29,7 @@ export default class extends Component {
       <>
         <header>
           <img className="logo" src="newlogo.png" alt="pocd logo"/>
-          <h1>My Favorite NASA photos</h1>
+          <h1>NASA Tracker</h1>
         </header>
         
         <nav>
